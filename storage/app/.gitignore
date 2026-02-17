@@ -1,0 +1,8 @@
+*
+!private/
+!public/
+!storage/
+!.gitignore
+
+# ignore credential firebase
+/storage/app/firebase/*.json

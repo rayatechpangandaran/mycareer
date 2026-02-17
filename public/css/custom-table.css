@@ -1,0 +1,66 @@
+/* ===============================
+   GLOBAL TABLE STYLE - SOFT ADMIN
+================================ */
+
+/* wrapper animasi */
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    animation: fadeUp .5s ease-in-out;
+    box-shadow: #2f3542;
+}
+
+/* HEADER */
+.table thead th {
+    background-color: #2f3542; /* soft dark */
+    color: #f1f2f6;
+    font-weight: 600;
+    border: none !important;
+    padding: 14px 12px;
+    font-size: 14px;
+}
+
+/* BODY */
+.table tbody td {
+    padding: 12px;
+    border-top: 1px solid #f1f1f1;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+/* ROW HOVER */
+.table tbody tr {
+    transition: all 0.25s ease;
+}
+
+.table tbody tr:hover {
+    background-color: #f8f9fa;
+    transform: scale(1.002);
+}
+
+/* BADGE SOFT */
+.badge {
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* BUTTON SOFT */
+.btn-sm {
+    border-radius: 6px;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

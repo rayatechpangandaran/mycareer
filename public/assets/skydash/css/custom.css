@@ -1,0 +1,36 @@
+.navbar-brand-wrapper {
+    height: 80px;
+}
+
+.brand-logo,
+.brand-logo-mini {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo-full {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-mini {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+
+#form-lowongan input,
+#form-lowongan select,
+#form-lowongan textarea {
+    color: #000000;
+}
+
+#form-lowongan ::placeholder {
+    color: #000000;
+    opacity: 0.8;
+}
+.lokasi-text {
+    line-height: 1.3;
+}
