@@ -20,23 +20,28 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot(): void
-    {
-       if (!app()->environment('local')) {
+   public function boot(): void
+{
+    // Force HTTPS hanya di production
+    if (app()->environment('production')) {
         URL::forceScheme('https');
     }
 
-    if (Schema::hasTable('faqs')) {
-        try {
-            $faqs = Faq::where('is_active', 1)
-                        ->orderBy('order')
-                        ->get();
-
-            View::share('faqs', $faqs);
-        } catch (\Exception $e) {
-            // biarin aja kalau gagal waktu build
-        }
+    // Jangan jalankan query saat console (build, config:cache, migrate, dll)
+    if (app()->runningInConsole()) {
+        return;
     }
 
+    try {
+        $faqs = \App\Models\Faq::where('is_active', 1)
+                    ->orderBy('order')
+                    ->get();
+
+        \Illuminate\Support\Facades\View::share('faqs', $faqs);
+
+    } catch (\Throwable $e) {
+        // diamkan saja supaya tidak crash deploy
     }
+}
+
 }
